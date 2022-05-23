@@ -5,7 +5,7 @@ function Hello({children}) {
     const [scroll, setScroll] = useState(false);
     const [device, setDevice] = useState("desktop");
     const [loading, setLoading] = useState(true);
-    setTimeout(()=>{setLoading(false)}, 5000)
+    setTimeout(()=>{setLoading(false)}, 1000)
     useEffect(()=>{
       window.addEventListener('resize', ()=>{
         window.innerWidth < 970 ? setWidth(true) : setWidth(false);

@@ -7,6 +7,9 @@ function Ecosystem() {
   return (
     <div className="w-full">
       <Navigation link={'ecosystem'} title="Levitra - Ecosystem"/>
+      <div className='flex justify-around'>
+        
+      </div>
       <Bottomer />
     </div>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Logo from '../assets/favicon.png'
 function Landing() {
-    const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(false)
   setTimeout(()=>{
       setLoad(true)
   },100)
