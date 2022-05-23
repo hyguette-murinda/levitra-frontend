@@ -6,7 +6,8 @@ import Approval from '../../icons/Approval'
 import MaleDoctor from '../../assets/male.png'
 
 function Ecosystem() {
-  const ecos = ["Health assessments", "Home medicine review", "Fractures and dislocation", "Desensitisation injections"]
+  const ecos = ["Health assessments", "Home medicine review", "Fractures and dislocation", "Desensitisation injections"];
+  const downs = ["Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family"]
   return (
     <div className="w-full bg-[#E6EDF8]">
       <Navigation link={'ecosystem'} title="Levitra - Ecosystem"/>
@@ -29,7 +30,7 @@ function Ecosystem() {
         </div>
         <div className='flex flex-col gap-5 items-center'>
           <h2 className='font-bold text-lg text-[#163158]'>Caring for the health and well being of you and your family</h2>
-          <h1 className='text-5xl font-bold text-center text-[#053085]'>We Strive To Provide You &amp; Your Family With The Best Medical</h1>
+          <h1 className='text-4xl font-bold text-center text-[#053085]'>We Strive To Provide You &amp; Your Family With The Best Medical</h1>
           <LeftDoctor />
         </div>
         <div className='flex flex-col gap-[3rem]'>
@@ -50,8 +51,28 @@ function Ecosystem() {
         </div>
       </div>
       <div className='flex w-full'>
-        <div style={{background: `url(${MaleDoctor})`}} className="bg-cover bg-center h-[50rem] bg-no-repeat w-1/2"></div>
-        <div></div>
+        <div style={{background: `url(${MaleDoctor})`}} className="bg-cover bg-center bg-no-repeat w-1/2"></div>
+        <div className='bg-[#080B4A] text-[#D6D5D5] flex flex-col gap-5 h-full'>
+          <h1 className='font-bold text-3xl text-white'>Sets The Standard For Outstanding High QualityCareAnd Patient Safety!!</h1> 4
+          <h2>
+            Our doctors include highly qualified male and female practitioners
+            who come from a range of backgrounds and bring with a diversity
+            of skills and special  interests.
+          </h2>
+          <h2>
+            Our adminstration and support staff all have exceptional people
+            skills and trained to assist you with all medical enquires.
+          </h2>
+          <div>
+            {downs.map((down, index)=>(
+              <div className='flex items-center gap-2'>
+                <Approval />
+                <div>{down}</div>
+              </div>
+            ))}
+          </div>
+          
+        </div>
       </div>
       <Bottomer />
     </div>
