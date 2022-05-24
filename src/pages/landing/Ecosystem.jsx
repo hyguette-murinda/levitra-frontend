@@ -65,7 +65,7 @@ function Ecosystem() {
           </h2>
           <div>
             {downs.map((down, index)=>(
-              <div className='flex items-center gap-2'>
+              <div key={index} className='flex items-center gap-2'>
                 <Approval />
                 <div>{down}</div>
               </div>
