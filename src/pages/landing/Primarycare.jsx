@@ -13,12 +13,12 @@ const {width} = useContext(Responsive);
 const [background, setBackground] = useState(null);
 const [loading, setLoading] = useState(true);
 useEffect(() =>{
-  setLoading(true)
   const fetchImage = async() =>{
+    setLoading(true)
     setBackground(await loader(back));
+    setLoading(false);
   }
   fetchImage();
-  setLoading(false);
 
 },[])
   return (
