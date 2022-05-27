@@ -1,15 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Navigation from '../../components/landing/Navigation'
 import Bottomer from '../../components/landing/Bottomer'
 import LeftDoctor from '../../icons/LeftDoctor'
 import Approval from '../../icons/Approval'
 import MaleDoctor from '../../assets/male.png'
+import { Responsive } from '../../context/landing/Responsive'
+import Landing from '../../loading/Landing'
 
 function Ecosystem() {
+  const { loading } = useContext(Responsive);
   const ecos = ["Health assessments", "Home medicine review", "Fractures and dislocation", "Desensitisation injections"];
   const downs = ["Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family"]
   return (
     <div className="w-full bg-[#E6EDF8]">
+      {loading && <Landing />}
       <Navigation link={'ecosystem'} title="Levitra - Ecosystem" />
       <div className='flex pt-[8rem] px-5 h-[100%] items-center'>
         <div className='flex flex-col gap-[3rem]'>
