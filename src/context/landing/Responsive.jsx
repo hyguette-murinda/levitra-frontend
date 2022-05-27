@@ -9,7 +9,7 @@ function Hello({ children }) {
   const [scroll, setScroll] = useState(false);
   const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  useEffect(() => { 
     var img = new Image();
     img.onload = () => {
       var doctor = new Image();
@@ -17,7 +17,7 @@ function Hello({ children }) {
         var plus = new Image();
         plus.onload = () => {
           var male = new Image();
-          male.onload = () =>{
+          male.onload = () => {
             setLoading(false)
           }
           male.src = MaleDoctor;

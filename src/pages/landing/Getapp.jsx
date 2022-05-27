@@ -9,7 +9,7 @@ function Getapp() {
   return (
     <div>
       {loading && <Landing />}
-      <Navigation link={'heathcare'} title="Levitra - Health Care" />
+      <Navigation link={'getapp'} title="Levitra - Health Care" />
       <Bottomer />
     </div>
   )

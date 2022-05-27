@@ -3,9 +3,9 @@ import Logo from '../assets/favicon.png'
 
 function Landing() {
   const [load, setLoad] = useState(false)
-  setTimeout(()=>{
+  setTimeout(() => {
     setLoad(true);
-  },100)
+  }, 100)
 
   return (
     <div style={{ zIndex: 50 }} className={`flex items-center bg-white justify-center fixed h-[100vh] w-full`}>
