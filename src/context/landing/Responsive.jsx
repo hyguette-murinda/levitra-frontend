@@ -1,4 +1,5 @@
 import React, { useEffect, useState, createContext } from 'react'
+import background from '../../assets/background.png'
 export const Responsive = createContext();
 function Hello({children}) {
     const [width, setWidth] = useState(false);
@@ -35,7 +36,7 @@ function Hello({children}) {
   },[])
   
   return (
-    <Responsive.Provider value={{width, scroll, loading,device}}>
+    <Responsive.Provider value={{width, scroll,background, loading,device}}>
         {children}
     </Responsive.Provider>
   )
