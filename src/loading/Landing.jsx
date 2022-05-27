@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Logo from '../assets/favicon.png'
 
 function Landing() {
-  const [load, setLoad] = useState(false);
-  const [rot, setRot] = useState(false);
-  useEffect(() => {
+  const [load, setLoad] = useState(false)
+  setTimeout(()=>{
     setLoad(true);
-    setTimeout(() => {
-      setRot(true)
-    }, 1000)
-  }, [])
+  },100)
 
   return (
     <div style={{ zIndex: 50 }} className={`flex items-center bg-white justify-center fixed h-[100vh] w-full`}>

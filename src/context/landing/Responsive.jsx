@@ -1,5 +1,8 @@
 import React, { useEffect, useState, createContext } from 'react'
 import background from '../../assets/background.png'
+import Woman from '../../assets/womandoc.png'
+import Doctors from '../../assets/doctor.png'
+import MaleDoctor from '../../assets/male.png'
 export const Responsive = createContext();
 function Hello({ children }) {
   const [width, setWidth] = useState(false);
@@ -8,10 +11,21 @@ function Hello({ children }) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     var img = new Image();
-    img.onload = function () {
-      if(document.getElementById('back')) document.getElementById('back').style.backgroundImage = `url(${background})`;
-      setTimeout(() => { setLoading(false) }, 1000)
-    };
+    img.onload = () => {
+      var doctor = new Image();
+      doctor.onload = () => {
+        var plus = new Image();
+        plus.onload = () => {
+          var male = new Image();
+          male.onload = () =>{
+            setLoading(false)
+          }
+          male.src = MaleDoctor;
+        }
+        plus.src = Doctors;
+      }
+      doctor.src = Woman;
+    }
     img.src = background;
   }, [])
   useEffect(() => {
@@ -39,7 +53,6 @@ function Hello({ children }) {
         setScroll(false);
       }
     });
-    window.scrollBy({ top: -window.pageYOffset, behavior: 'smooth' })
   }, [])
 
   return (

@@ -70,7 +70,7 @@ function Primarycare() {
         </div>
         <h1 className="font-bold text-5xl py-2 text-center">{width ? "What we offer" : "Services we offer"}</h1>
         <p className="text-center text-lg max-w-[35rem] leading-5 text-gray-500">Levitra is responsible for constantly analyzing your health to predict and prevent future diseases and warn for any maldosage</p>
-        <div className="flex items-center py-7 gap-10 px-5">
+        <div id="woman" className="flex items-center py-7 gap-10 px-5">
           {!width && <img src={Woman} className="h-[30rem]" alt="womandoctor" />}
           <div className="flex h-full gap-7">
             {lefts.slice(0, 2).map((left, indexs) => (
