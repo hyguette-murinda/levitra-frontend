@@ -8,7 +8,7 @@ function Hello({ children }) {
   const [width, setWidth] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [device, setDevice] = useState("desktop");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // useEffect(() => { 
   //   var img = new Image();
   //   img.onload = () => {
