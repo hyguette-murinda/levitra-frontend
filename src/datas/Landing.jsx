@@ -8,15 +8,6 @@ import Doctors from '../assets/doctor.png'
 import Doctor from '../icons/doctor.jsx'
 import Smile from '../icons/Smile.jsx'
 
-export const loader = async(img) =>{
-  const image = new Image();
-  image.src = img;
-  image.addEventListener('load', ()=>{
-    console.log('h')
-  })
-  return image.src;
-}
-
 export const navs = [
     {link: "Primary Care", path: "primarycare"}, 
     {link: "Ecosystem", path: "ecosystem"}, 
