@@ -1,15 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navigation from '../../components/landing/Navigation'
-import background from '../../assets/background.png'
 import Ratings from '../../icons/Ratings.jsx'
 import Quotatoins from '../../icons/Quotatoins.jsx'
 import Woman from '../../assets/womandoc.png'
 import Bottomer from '../../components/landing/Bottomer'
 import { Responsive } from '../../context/landing/Responsive'
-import { lefts, follows, works, testmony } from '../../datas/Landing'
+import { lefts, follows, works, testmony, loader } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
+import back from '../../assets/background.png'
 function Primarycare() {
-const {width, loading} = useContext(Responsive);
+const {width} = useContext(Responsive);
+const [background, setBackground] = useState(null);
+const [loading, setLoading] = useState(true);
+useEffect(() =>{
+  setLoading(true)
+  const fetchImage = async() =>{
+    setBackground(await loader(back));
+  }
+  fetchImage();
+  setLoading(false);
+
+},[])
   return (
     loading ? <Landing /> : 
     <div>
