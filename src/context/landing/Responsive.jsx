@@ -9,25 +9,25 @@ function Hello({ children }) {
   const [scroll, setScroll] = useState(false);
   const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(true);
-  useEffect(() => { 
-    var img = new Image();
-    img.onload = () => {
-      var doctor = new Image();
-      doctor.onload = () => {
-        var plus = new Image();
-        plus.onload = () => {
-          var male = new Image();
-          male.onload = () => {
-            setLoading(false)
-          }
-          male.src = MaleDoctor;
-        }
-        plus.src = Doctors;
-      }
-      doctor.src = Woman;
-    }
-    img.src = background;
-  }, [])
+  // useEffect(() => { 
+  //   var img = new Image();
+  //   img.onload = () => {
+  //     var doctor = new Image();
+  //     doctor.onload = () => {
+  //       var plus = new Image();
+  //       plus.onload = () => {
+  //         var male = new Image();
+  //         male.onload = () => {
+  //           setLoading(false)
+  //         }
+  //         male.src = MaleDoctor;
+  //       }
+  //       plus.src = Doctors;
+  //     }
+  //     doctor.src = Woman;
+  //   }
+  //   img.src = background;
+  // }, [])
   useEffect(() => {
     window.addEventListener('resize', () => {
       window.innerWidth < 970 ? setWidth(true) : setWidth(false);
