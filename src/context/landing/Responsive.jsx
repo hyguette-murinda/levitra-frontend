@@ -1,10 +1,19 @@
 import React, { useEffect, useState, createContext } from 'react'
+import background from '../../assets/background.png'
 export const Responsive = createContext();
 function Hello({children}) {
     const [width, setWidth] = useState(false);
     const [scroll, setScroll] = useState(false);
     const [device, setDevice] = useState("desktop");
-    
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+      var img = new Image();
+      img.onload = function () {
+        document.getElementById('back').style.backgroundImage = `url(${background})`;
+        setTimeout(()=>{setLoading(false)},1000)
+      };
+      img.src = background;
+    }, [])
     useEffect(()=>{
       window.addEventListener('resize', ()=>{
         window.innerWidth < 970 ? setWidth(true) : setWidth(false);
@@ -34,7 +43,7 @@ function Hello({children}) {
   },[])
   
   return (
-    <Responsive.Provider value={{width, scroll,device}}>
+    <Responsive.Provider value={{width,loading, scroll,device}}>
         {children}
     </Responsive.Provider>
   )
