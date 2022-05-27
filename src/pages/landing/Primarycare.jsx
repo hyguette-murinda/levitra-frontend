@@ -5,12 +5,10 @@ import Quotatoins from '../../icons/Quotatoins.jsx'
 import Woman from '../../assets/womandoc.png'
 import Bottomer from '../../components/landing/Bottomer'
 import { Responsive } from '../../context/landing/Responsive'
-import background from '../../assets/background.png'
 import { lefts, follows, works, testmony } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
 function Primarycare() {
-  const { width,loading } = useContext(Responsive);
-  console.log(loading)
+  const { width,loading, background } = useContext(Responsive);
   return (
     <div>
       {loading && <Landing />}
