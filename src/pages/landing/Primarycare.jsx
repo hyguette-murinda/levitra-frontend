@@ -10,9 +10,18 @@ import Landing from '../../loading/Landing'
 import background from '../../assets/background.png'
 function Primarycare() {
 const {width} = useContext(Responsive);
-
+const [loading, setLoading] = useState(true);
+useEffect(() =>{
+  var img = new Image();
+    img.onload = function () {
+        document.getElementById('back').style.backgroundImage = `url(${background})`;
+        setLoading(false);
+    };
+    img.src = background;
+},[])
   return (
     <div>
+      {loading && <Landing />}
       <Navigation link={'primarycare'} title="Levitra - Primary Care"/>
       <div id="back" style={{background: `url(${background})`}} className="bg-cover pb-10 h-[100%] bg-top">
         <div className="pt-[8rem] flex flex-col justify-start gap-[2rem] h-full pl-14 max-w-[40rem]">
