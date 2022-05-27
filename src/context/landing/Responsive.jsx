@@ -10,7 +10,7 @@ function Hello({children}) {
       var img = new Image();
       img.onload = function () {
         document.getElementById('back').style.backgroundImage = `url(${background})`;
-        setTimeout(()=>{setLoading(false)},1000)
+        setLoading(false)
       };
       img.src = background;
     }, [])
