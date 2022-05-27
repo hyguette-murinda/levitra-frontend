@@ -7,8 +7,17 @@ export const Responsive = createContext();
 function Hello({ children }) {
   const [width, setWidth] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [wid, setWid] = useState(false)
   const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(true);
+  useEffect(()=>{
+    window.addEventListener('resize', () =>{
+      window.innerWidth <=865 ? setWid(true) : setWid(false)
+    })
+  });
+  useEffect(()=>{
+    window.innerWidth <= 865 && setWid(true)
+  },[])
   useEffect(() => { 
     var img = new Image();
     img.onload = () => {
@@ -56,7 +65,7 @@ function Hello({ children }) {
   }, [])
 
   return (
-    <Responsive.Provider value={{ width, loading, scroll, device }}>
+    <Responsive.Provider value={{ width,wid, loading, scroll, device }}>
       {children}
     </Responsive.Provider>
   )
