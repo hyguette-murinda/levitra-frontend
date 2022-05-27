@@ -18,7 +18,7 @@ const notDrop = () =>{
   setDropdown(false)
 }
   return (
-    <div className={`${(scroll || link !=="primarycare") ? "bg-white shadow-md drop-shadow-md" : "bg-transparent"} z-50 w-full ${! width ? 'px-5' : 'px-2'} duration-500  flex justify-between h-[5rem] items-center fixed`}>
+    <div className={`${(scroll || link !=="primarycare") ? "bg-white shadow-md drop-shadow-md" : "bg-transparent"} z-30 w-full ${! width ? 'px-5' : 'px-2'} duration-500  flex justify-between h-[5rem] items-center fixed`}>
       {width && 
       <div className=" relative">
         {device === "desktop" ? 
