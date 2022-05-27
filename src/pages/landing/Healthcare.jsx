@@ -5,8 +5,8 @@ import Bottomer from '../../components/landing/Bottomer'
 function Healthcare() {
   return (
     <div>
-        <Navigation link={'heathcare'} title="Levitra - Health Care"/>
-        <Bottomer />
+      <Navigation link={'heathcare'} title="Levitra - Health Care" />
+      <Bottomer />
     </div>
   )
 }

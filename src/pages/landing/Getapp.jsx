@@ -5,8 +5,8 @@ import Bottomer from '../../components/landing/Bottomer'
 function Getapp() {
   return (
     <div>
-        <Navigation link={'getapp'} title="Levitra - Get app"/>
-        <Bottomer />
+      <Navigation link={'getapp'} title="Levitra - Get app" />
+      <Bottomer />
     </div>
   )
 }
