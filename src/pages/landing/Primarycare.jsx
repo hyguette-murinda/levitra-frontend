@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import Navigation from '../../components/landing/Navigation'
+import background from '../../assets/background.png'
 import Ratings from '../../icons/Ratings.jsx'
 import Quotatoins from '../../icons/Quotatoins.jsx'
 import Woman from '../../assets/womandoc.png'
@@ -8,7 +9,7 @@ import { Responsive } from '../../context/landing/Responsive'
 import { lefts, follows, works, testmony } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
 function Primarycare() {
-const {width, loading, background} = useContext(Responsive);
+const {width, loading} = useContext(Responsive);
   return (
     loading ? <Landing /> : 
     <div>
