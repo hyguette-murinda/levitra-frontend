@@ -23,7 +23,7 @@ const {width, loading} = useContext(Responsive);
              health care will always be our priority. So we follow 
              the best practices for cleanlliness.
           </p>
-          <div className={`flex gap-5 mt-10 ${width && 'flex-col'}`}>
+          <div className={`flex gap-5 mt-10 `}>
              {follows.map((nav, index)=>(
              <div key={index} className="bg-white w-[9rem] h-[9rem] flex items-center justify-center flex-col rounded-[10px] shadow-md drop-shadow-md">
                 <div className={`${index === 0 ? "bg-[#0B7E5C]" : "bg-[#0D3176]"} flex items-center justify-center rounded-[5px] w-[4rem] h-[4rem]`}>{nav.icon}</div>
@@ -37,7 +37,7 @@ const {width, loading} = useContext(Responsive);
       <div className="flex items-center justify-center flex-col">
         <h1 className="font-bold text-5xl py-4 text-center">What we care about</h1>
         <h1 style={{lineHeight: "25px"}} className="max-w-[38rem] pb-2 w-full text-[#625C5C] font-[500] font-[sans Inter] text-center text-xl">We strive to provide you and your family With the best medical And General Practice Care</h1>
-        <div className={`flex items-center gap-14 justify-center mt-7`}>
+        <div className={`flex items-center gap-14 ${width && 'flex-col'} justify-center mt-7`}>
           {works.map((work, index)=>(
             <div key={index} style={{boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.25)"}} className={`bg-white gap-5 min-h-[18rem] min-w-[15rem] px-5 flex items-center flex-col justify-center rounded-[10px]`}>
               <div className={`${index === 0 ? "bg-[#071854]" : `${index === 1 ? "bg-[#0B7E5C]" : "bg-[#1537AE]"}`} w-[8rem] flex items-center justify-center h-[6rem] rounded-[10px]`}>{work.icon}</div>
