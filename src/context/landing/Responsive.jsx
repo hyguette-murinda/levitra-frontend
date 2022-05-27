@@ -6,8 +6,8 @@ function Hello({children}) {
     const [scroll, setScroll] = useState(false);
     const [device, setDevice] = useState("desktop");
     const [loading, setLoading] = useState(true);
-    var img = new Image();
     useEffect(() => {
+      var img = new Image();
       img.onload = function () {
         document.getElementById('back').style.backgroundImage = `url(${background})`;
         setTimeout(()=>{setLoading(false)},1000)
@@ -43,7 +43,7 @@ function Hello({children}) {
   },[])
   
   return (
-    <Responsive.Provider value={{width,loading, background: img.src, scroll,device}}>
+    <Responsive.Provider value={{width,loading, scroll,device}}>
         {children}
     </Responsive.Provider>
   )
