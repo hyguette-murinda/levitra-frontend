@@ -1,6 +1,5 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import Navigation from '../../components/landing/Navigation'
-import background from '../../assets/background.png'
 import Ratings from '../../icons/Ratings.jsx'
 import Quotatoins from '../../icons/Quotatoins.jsx'
 import Woman from '../../assets/womandoc.png'
@@ -9,12 +8,12 @@ import { Responsive } from '../../context/landing/Responsive'
 import { lefts, follows, works, testmony } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
 function Primarycare() {
-const {width, loading} = useContext(Responsive)
+const {width, loading, background} = useContext(Responsive);
   return (
     loading ? <Landing /> : 
     <div>
       <Navigation link={'primarycare'} title="Levitra - Primary Care"/>
-      <div style={{backgroundImage: `url('${background}')`}} className="bg-cover h-[100vh] bg-top">
+      <div style={{backgroundImage: `url('${background}')`}} className="bg-cover h-[100%] bg-top">
         <div className="pt-[8rem] flex flex-col justify-start gap-[2rem] h-full pl-14 max-w-[40rem]">
           <h1 className="text-[#034BD6] text-xl font-bold pb-2">We work to take care of your hearth and body</h1>
           <p className={`font-[800] ${!width ?'text-5xl' : 'text-3xl'} py-3 font-[sans Rubik]`}>Medical care for simplified everyone!</p>
@@ -37,7 +36,7 @@ const {width, loading} = useContext(Responsive)
       <div className="flex items-center justify-center flex-col">
         <h1 className="font-bold text-5xl py-4 text-center">What we care about</h1>
         <h1 style={{lineHeight: "25px"}} className="max-w-[38rem] pb-2 w-full text-[#625C5C] font-[500] font-[sans Inter] text-center text-xl">We strive to provide you and your family With the best medical And General Practice Care</h1>
-        <div className={`flex items-center gap-14 ${width && 'flex-col'} justify-center mt-7`}>
+        <div className={`flex items-center gap-14 justify-center mt-7`}>
           {works.map((work, index)=>(
             <div key={index} style={{boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.25)"}} className={`bg-white gap-5 min-h-[18rem] min-w-[15rem] px-5 flex items-center flex-col justify-center rounded-[10px]`}>
               <div className={`${index === 0 ? "bg-[#071854]" : `${index === 1 ? "bg-[#0B7E5C]" : "bg-[#1537AE]"}`} w-[8rem] flex items-center justify-center h-[6rem] rounded-[10px]`}>{work.icon}</div>

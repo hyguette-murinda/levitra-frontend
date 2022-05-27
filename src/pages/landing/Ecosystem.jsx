@@ -11,7 +11,7 @@ function Ecosystem() {
   return (
     <div className="w-full bg-[#E6EDF8]">
       <Navigation link={'ecosystem'} title="Levitra - Ecosystem"/>
-      <div className='flex pt-[8rem] px-5 items-center'>
+      <div className='flex pt-[8rem] px-5 h-[100%] items-center'>
         <div className='flex flex-col gap-[3rem]'>
           <div className='font-bold text-[#163158] max-w-[28rem] text-xl'>
           We provide all aspects of medical practice for
