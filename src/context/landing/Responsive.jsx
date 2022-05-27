@@ -10,7 +10,7 @@ function Hello({children}) {
     useEffect(()=>{
       window.addEventListener('resize', ()=>{
         window.innerWidth < 970 ? setWidth(true) : setWidth(false);
-      });
+      })
     })
   useEffect(()=>{ 
     window.innerWidth < 970 ? setWidth(true) : setWidth(false);
