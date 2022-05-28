@@ -10,15 +10,15 @@ function Hello({ children }) {
   const [wid, setWid] = useState(false)
   const [device, setDevice] = useState("desktop");
   const [loading, setLoading] = useState(true);
-  useEffect(()=>{
-    window.addEventListener('resize', () =>{
-      window.innerWidth <=865 ? setWid(true) : setWid(false)
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      window.innerWidth <= 865 ? setWid(true) : setWid(false)
     })
   });
-  useEffect(()=>{
+  useEffect(() => {
     window.innerWidth <= 865 && setWid(true)
-  },[])
-  useEffect(() => { 
+  }, [])
+  useEffect(() => {
     var img = new Image();
     img.onload = () => {
       var doctor = new Image();
@@ -27,7 +27,7 @@ function Hello({ children }) {
         plus.onload = () => {
           var male = new Image();
           male.onload = () => {
-            setLoading(false)
+            setTimeout(() => { setLoading(false) }, 1000)
           }
           male.src = MaleDoctor;
         }
@@ -65,7 +65,7 @@ function Hello({ children }) {
   }, [])
 
   return (
-    <Responsive.Provider value={{ width,wid, loading, scroll, device }}>
+    <Responsive.Provider value={{ width, wid, loading, scroll, device }}>
       {children}
     </Responsive.Provider>
   )

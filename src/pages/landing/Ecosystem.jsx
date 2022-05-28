@@ -78,7 +78,10 @@ function Ecosystem() {
             </div>
           </div>
         }
-        <div></div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
         <div></div>
       </div>
       <Bottomer />
