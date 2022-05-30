@@ -103,11 +103,11 @@ function Ecosystem() {
             </div>
           </div>
         )}
-        <div className="flex w-full">
-          <div style={{ backgroundImage: `url(${MaleDoctor})`}} className="w-1/2"></div>
-          <div className="bg-[#080B4A] flex gap-10 flex-col text-white">
-            <h1 className="font-bold text-4xl text-center">
-              Sets The Standard For Outstanding High QualityCareAnd Patient
+        <div className="flex w-full mb-10">
+          <div style={{ backgroundImage: `url(${MaleDoctor})`}} className="min-w-[50%]"></div>
+          <div className="bg-[#080B4A] flex gap-7 flex-col px-14 py-10 text-white">
+            <h1 className="font-bold text-4xl font-[sans Inter] text-center">
+              Sets The Standard For Outstanding High QualityCare And Patient
               Safety!!
             </h1>
             <p className="text-[#D6D5D5]">
@@ -115,15 +115,15 @@ function Ecosystem() {
               who come from a range of backgrounds and bring with a diversity of
               skills and special interests.
             </p>
-            <p className="text-[#D6D5D5]">
+            <p className="text-[#D6D5D5] pt-5">
               Our administration and support staff all have exceptional people
               skills and trained to assist you with all medical enquires.
             </p>
-            <div className="w-1/2">
+            <div className="max-w-1/2 flex flex-col gap-4">
               {downs.map((down, index) => (
-                <div key={index} className="flex items-center">
+                <div key={index} className="flex gap-3 items-center">
                   <Approval />
-                  <div>{down}</div>
+                  <div className="font-semibold">{down}</div>
                 </div>
               ))}
             </div>
