@@ -1,73 +1,98 @@
-import React, { useContext } from 'react'
-import Navigation from '../../components/landing/Navigation'
-import Bottomer from '../../components/landing/Bottomer'
-import LeftDoctor from '../../icons/LeftDoctor'
-import Approval from '../../icons/Approval'
-import MaleDoctor from '../../assets/male.png'
-import { Responsive } from '../../context/landing/Responsive'
-import Landing from '../../loading/Landing'
+import React, { useContext } from "react";
+import Navigation from "../../components/landing/Navigation";
+import Bottomer from "../../components/landing/Bottomer";
+import LeftDoctor from "../../icons/LeftDoctor";
+import Approval from "../../icons/Approval";
+import MaleDoctor from "../../assets/male.png";
+import { Responsive } from "../../context/landing/Responsive";
+import Landing from "../../loading/Landing";
 
 function Ecosystem() {
   const { loading, width, wid } = useContext(Responsive);
-  const ecos = ["Health assessments", "Home medicine review", "Fractures and dislocation", "Desensitisation injections"];
-  const downs = ["Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family", "Delivering tomorrow's health care for your family"]
+  const ecos = [
+    "Health assessments",
+    "Home medicine review",
+    "Fractures and dislocation",
+    "Desensitization injections",
+  ];
+  const downs = [
+    "Delivering tomorrow's health care for your family",
+    "Delivering tomorrow's health care for your family",
+    "Delivering tomorrow's health care for your family",
+  ];
   return (
     <div className="w-full bg-[#E6EDF8]">
       {loading && <Landing />}
-      <Navigation link={'ecosystem'} title="Levitra - Ecosystem" />
+      <Navigation link={"ecosystem"} title="Levitra - Ecosystem" />
       <div className="pt-[8rem] bg-[#E6EDF8]">
-        {!width ? <div className="flex gap-4 pb-14 px-4 items-center justify-center">
-          <div className='flex flex-col gap-16 max-w-[27rem]'>
-            <div className='text-[#3A4A62] text-xl font-bold'>
-              We provide all aspects of medical practice for
-              you whole family, including general check-ups
-              or assisting you with specific injuries.
+        {!width ? (
+          <div className="flex gap-4 pb-14 px-4 items-center justify-center">
+            <div className="flex flex-col gap-16 max-w-[27rem]">
+              <div className="text-[#3A4A62] text-xl font-bold">
+                We provide all aspects of medical practice for you whole family,
+                including general check-ups or assisting you with specific
+                injuries.
+              </div>
+              <div className="text-[#3A4A62] font-medium text-lg">
+                We'll work with you to develop individualized care plans,
+                including management of chronic diseases. If we cannot assist,
+                we can provide referrals or advice about type of practitioner
+                require. We treat all enquires sensitively and in the strictest
+                confidence
+              </div>
             </div>
-            <div className='text-[#3A4A62] font-medium text-lg'>
-              We'll  work with you to develop individualised
-              care plans, including management of
-              chronic diseases. If we cannot assist,
-              we can provide referrals  or advice
-              about type of practitioner
-              require. We treat all enquires sensitively
-              and in the strictest confidence
+            <div className="flex flex-col gap-4 items-center max-w-[50rem]">
+              <h2 className="text-[#3A4A62] text-center font-bold text-xl">
+                Caring for the health and well being of you and your family
+              </h2>
+              <h1 className="font-bold text-4xl text-[#053085] text-center">
+                We Strive To Provide You &amp; Your Family With The Best Medical
+              </h1>
+              <LeftDoctor />
+            </div>
+            <div className="text-[#3A4A62] max-w-[25rem] flex flex-col gap-5 text-lg">
+              <div className="font-medium text-lg">
+                We're here to care for you and your entire family. Regular
+                visits to the doctor will depend on your age and general health!
+              </div>
+              <div className="flex flex-col gap-2 w-[18rem]">
+                {ecos.map((eco, index) => (
+                  <div key={index} className="flex font-bold gap-2 items-center">
+                    <Approval />
+                    <div>{eco}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div className='flex flex-col gap-4 items-center max-w-[50rem]'>
-            <h2 className='text-[#3A4A62] text-center font-bold text-xl'>Caring for the health and well being of you and your family</h2>
-            <h1 className='font-bold text-4xl text-[#053085] text-center'>We Strive To Provide You &amp; Your Family With The Best Medical</h1>
-            <LeftDoctor />
-          </div>
-          <div className='text-[#3A4A62] max-w-[25rem] flex flex-col gap-5 text-lg'>
-            <div className='font-medium text-lg'>
-              We're here to care for you and
-              your entire family. Regular visits
-              to the doctor will depend on your
-              age and general health!
-            </div>
-            <div className='flex flex-col gap-2 w-[18rem]'>
-              {ecos.map((eco, index) => (
-                <div className='flex font-bold gap-2 items-center'>
-                  <Approval />
-                  <div>{eco}</div>
+        ) : (
+          <div className="flex flex-col items-center gap-8 pb-14">
+            <h2
+              className={`text-[#3A4A62] ${
+                !wid && "text-center"
+              } font-bold text-xl`}
+            >
+              Caring for the health and well being of you and your family
+            </h2>
+            <div className="flex gap-4 px-4">
+              <div className="flex flex-col gap-7">
+                <h1 className={`font-bold text-3xl text-[#053085]`}>
+                  We Strive To Provide You &amp; Your Family With The Best
+                  Medical
+                </h1>
+                <div
+                  className={`text-[#3A4A62] ${wid && ""} text-xl font-bold`}
+                >
+                  We provide all aspects of medical practice for you whole
+                  family, including general check-ups or assisting you with
+                  specific injuries.
                 </div>
-              ))}
-            </div>
-          </div>
-        </div> :
-          <div className='flex flex-col items-center gap-8 pb-14'>
-            <h2 className={`text-[#3A4A62] ${!wid && 'text-center'} font-bold text-xl`}>Caring for the health and well being of you and your family</h2>
-            <div className='flex gap-4 px-4'>
-              <div className='flex flex-col gap-7'>
-                <h1 className={`font-bold text-3xl text-[#053085]`}>We Strive To Provide You &amp; Your Family With The Best Medical</h1>
-                <div className={`text-[#3A4A62] ${wid && ''} text-xl font-bold`}>
-                  We provide all aspects of medical practice for
-                  you whole family, including general check-ups
-                  or assisting you with specific injuries.
-                </div>
-                <div className='flex flex-col text-[#3A4A62] gap-2'>
+                <div className="flex flex-col text-[#3A4A62] gap-2">
                   {ecos.map((eco, index) => (
-                    <div className='flex font-bold text-lg gap-2 items-center'>
+                    <div
+                      key={index}
+                      className="flex font-bold text-lg gap-2 items-center"
+                    >
                       <Approval />
                       <div>{eco}</div>
                     </div>
@@ -77,16 +102,38 @@ function Ecosystem() {
               <LeftDoctor />
             </div>
           </div>
-        }
-        <div>
-          <div></div>
-          <div></div>
+        )}
+        <div className="flex w-full">
+          <div style={{ backgroundImage: `url(${MaleDoctor})`}} className="w-1/2"></div>
+          <div className="bg-[#080B4A] flex gap-10 flex-col text-white">
+            <h1 className="font-bold text-4xl text-center">
+              Sets The Standard For Outstanding High QualityCareAnd Patient
+              Safety!!
+            </h1>
+            <p className="text-[#D6D5D5]">
+              Our doctors include highly qualified male and female practitioners
+              who come from a range of backgrounds and bring with a diversity of
+              skills and special interests.
+            </p>
+            <p className="text-[#D6D5D5]">
+              Our administration and support staff all have exceptional people
+              skills and trained to assist you with all medical enquires.
+            </p>
+            <div className="w-1/2">
+              {downs.map((down, index) => (
+                <div key={index} className="flex items-center">
+                  <Approval />
+                  <div>{down}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
       <Bottomer />
     </div>
-  )
+  );
 }
 
-export default Ecosystem
+export default Ecosystem;
