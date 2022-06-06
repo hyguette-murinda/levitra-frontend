@@ -8,36 +8,47 @@ import Bottomer from '../../components/landing/Bottomer'
 import { Responsive } from '../../context/landing/Responsive'
 import { lefts, follows, works, testmony } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
+import Fade from 'react-reveal/Fade'
+// import Fade from 'react-reveal/Fade'
+import { Zoom } from 'react-reveal'
+
 function Primarycare() {
   const { width, loading } = useContext(Responsive);
+
   return (
     <div>
-      {loading && <Landing />}
+      {loading ? <Landing /> :
+      <>
       <Navigation link={'primarycare'} title="Levitra - Primary Care" />
       <div id="back" style={{ backgroundImage: `url('${background}')` }} className="bg-cover pb-10 h-[100%] bg-top">
-        <div className="pt-[8rem] flex flex-col justify-start gap-[2rem] h-full pl-14 max-w-[40rem]">
-          <h1 className="text-[#034BD6] text-xl font-bold pb-2">We work to take care of your hearth and body</h1>
-          <p className={`font-[800] ${!width ? 'text-5xl' : 'text-3xl'} py-3 font-[sans Rubik]`}>Medical care for simplified everyone!</p>
-          <p className="text-gray-600 mt-[2rem] text-lg max-w-[24rem] font-semibold">
-            The health and well-being of our patients and their
-            health care will always be our priority. So we follow
-            the best practices for cleanlliness.
-          </p>
-          <div className={`flex gap-5 mt-10 `}>
-            {follows.map((nav, index) => (
-              <div key={index} className="bg-white w-[9rem] h-[9rem] flex items-center justify-center flex-col rounded-[10px] shadow-md drop-shadow-md">
-                <div className={`${index === 0 ? "bg-[#0B7E5C]" : "bg-[#0D3176]"} flex items-center justify-center rounded-[5px] w-[4rem] h-[4rem]`}>{nav.icon}</div>
-                <div className="font-bold text-lg ">{nav.h1}</div>
-                <div className="font-medium">{nav.message}</div>
+          <div className="pt-[8rem] flex flex-col justify-start gap-[2rem] h-full pl-14 max-w-[40rem]">
+            <Fade duration={1000} left>
+              <h1 className="text-[#034BD6] text-xl font-bold pb-2">We work to take care of your hearth and body</h1>
+              <p className={`font-[800] ${!width ? 'text-5xl' : 'text-3xl'} py-3 font-[sans Rubik]`}>Medical care for simplified everyone!</p>
+              <p className="text-gray-600 mt-[2rem] text-lg max-w-[24rem] font-semibold">
+                The health and well-being of our patients and their
+                health care will always be our priority. So we follow
+                the best practices for cleanlliness.
+              </p>
+              <div className={`flex gap-5 mt-10 `}>
+                {follows.map((nav, index) => (
+                  <div key={index} className="bg-white w-[9rem] h-[9rem] flex items-center justify-center flex-col rounded-[10px] shadow-md drop-shadow-md">
+                    <div className={`${index === 0 ? "bg-[#0B7E5C]" : "bg-[#0D3176]"} flex items-center justify-center rounded-[5px] w-[4rem] h-[4rem]`}>{nav.icon}</div>
+                    <div className="font-bold text-lg ">{nav.h1}</div>
+                    <div className="font-medium">{nav.message}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </Fade>
           </div>
-        </div>
       </div>
       <div className="flex items-center justify-center flex-col">
-        <h1 className="font-bold text-5xl py-4 text-center">What we care about</h1>
-        <h1 style={{ lineHeight: "25px" }} className="max-w-[38rem] pb-2 w-full text-[#625C5C] font-[500] font-[sans Inter] text-center text-xl">We strive to provide you and your family With the best medical And General Practice Care</h1>
-        <div className={`flex items-center gap-14 ${width && 'flex-col'} justify-center mt-7`}>
+        <Fade right duration={1000} >
+          <h1 className="font-bold text-5xl py-4 text-center">What we care about</h1>
+          <h1 style={{ lineHeight: "25px" }} className="max-w-[38rem] pb-2 w-full text-[#625C5C] font-[500] font-[sans Inter] text-center text-xl">We strive to provide you and your family With the best medical And General Practice Care</h1>
+        </Fade>
+        <Fade bottom duration={1500}>
+          <div className={`flex items-center gap-14 ${width && 'flex-col'} justify-center mt-7`}>
           {works.map((work, index) => (
             <div key={index} style={{ boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.25)" }} className={`bg-white gap-5 min-h-[18rem] min-w-[15rem] px-5 flex items-center flex-col justify-center rounded-[10px]`}>
               <div className={`${index === 0 ? "bg-[#071854]" : `${index === 1 ? "bg-[#0B7E5C]" : "bg-[#1537AE]"}`} w-[8rem] flex items-center justify-center h-[6rem] rounded-[10px]`}>{work.icon}</div>
@@ -46,14 +57,20 @@ function Primarycare() {
             </div>
           ))}
         </div>
+        </Fade>
         <div className="border-t-[2px] my-7 border-solid border-[#B3B3B3] min-w-[55%]"></div>
-        <h1 className="font-bold text-5xl pb-4 text-center">Worldwide Rating</h1>
-        <p>Our Doctors and clinics have earned  over 3,700+Reviews on Google!</p>
-        <div className="my-3"><Ratings /></div>
-        <p className="text-[rgba(10,55,171,0.86)]">Average Google Rating is 4.6</p>
+        <Zoom duration={1000}>
+          <h1 className="font-bold text-5xl pb-4 text-center">Worldwide Rating</h1>
+          <p>Our Doctors and clinics have earned  over 3,700+Reviews on Google!</p>
+          <div className="my-3"><Ratings /></div>
+          <p className="text-[rgba(10,55,171,0.86)]">Average Google Rating is 4.6</p>
+        </Zoom>
         <div className="border-t-[2px] my-5 border-solid border-[#B3B3B3] min-w-[55%]"></div>
-        <h1 className="font-bold text-5xl pt-2 pb-10 text-center">Testimonials</h1>
-        <div className={`flex gap-10 pb-5 px-[2rem] ${width && 'flex-col'}`}>
+        <Fade left duration={1000}>
+          <h1 className="font-bold text-5xl pt-2 pb-10 text-center">Testimonials</h1>
+        </Fade>
+        <Fade bottom duration={1500}>
+          <div className={`flex gap-10 pb-5 px-[2rem] ${width && 'flex-col'}`}>
           {testmony.map((test, index) => (
             <div key={index} className="bg-white rounded-[10px] flex flex-col justify-between gap-5 py-6 px-10" style={{ boxShadow: '2px 2px 20px rgba(0, 0, 0, 0.25)' }}>
               <Quotatoins />
@@ -68,11 +85,17 @@ function Primarycare() {
             </div>
           ))}
         </div>
-        <h1 className="font-bold text-5xl py-2 text-center">{width ? "What we offer" : "Services we offer"}</h1>
-        <p className="text-center text-lg max-w-[35rem] leading-5 text-gray-500">Levitra is responsible for constantly analyzing your health to predict and prevent future diseases and warn for any maldosage</p>
+        </Fade>
+        <Zoom>
+          <h1 className="font-bold text-5xl py-2 text-center">{width ? "What we offer" : "Services we offer"}</h1>
+          <p className="text-center text-lg max-w-[35rem] leading-5 text-gray-500">Levitra is responsible for constantly analyzing your health to predict and prevent future diseases and warn for any maldosage</p>
+        </Zoom>
         <div id="woman" className="flex items-center py-7 gap-10 px-5">
-          {!width && <img src={Woman} className="h-[30rem]" alt="womandoctor" />}
-          <div className="flex h-full gap-7">
+            <Fade left duration={1000} >
+              {!width && <img src={Woman} className="h-[30rem]" alt="womandoctor" />}
+            </Fade>
+            <Fade bottom duration={1500}>
+              <div className="flex h-full gap-7">
             {lefts.slice(0, 2).map((left, indexs) => (
               <div key={indexs} className={`flex flex-col gap-5 max-h-full ${indexs === 0 ? "justify-end" : "justify-start"}`}>
                 {indexs === 0 ? lefts.filter((value, index) => (index === 0 || index === 2)).map((left, index) => (
@@ -91,10 +114,14 @@ function Primarycare() {
               </div>
             ))}
           </div>
+            </Fade>
         </div>
       </div>
-      <Bottomer />
+      <Fade bottom >
+        <Bottomer />
+      </Fade>
+    </>}
     </div>
   )
 }
-export default Primarycare
+export default Primarycare 

@@ -10,16 +10,20 @@ function Navigation({ link, title }) {
   useEffect(() => {
     document.title = title;
   }, [title]);
+
   const [dropdown, setDropdown] = useState(false);
   const drop = () => {
     setDropdown(true);
   }
+
   const notDrop = () => {
     setDropdown(false)
   }
+  
   useEffect(() => {
     window.scrollBy({ top: -window.pageYOffset })
   }, [])
+  
   return (
     <div className={`${(scroll || link !== "primarycare") ? "bg-white shadow-md drop-shadow-md" : "bg-transparent"} z-30 w-full ${!width ? 'px-5' : 'px-2'} duration-500  flex justify-between h-[5rem] items-center fixed`}>
       {width &&
