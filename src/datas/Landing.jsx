@@ -22,7 +22,7 @@ export const bots = [
 export const contacts = [
   { icon: <FaFacebookF className="text-xl" />, title: "Facebook", link: "https://www.facebook.com/nikalisa.45" },
   { icon: <Instagram />, title: "Instagram", link: "https://www.instagram.com/ni_kalisa" },
-  { icon: <FaLinkedinIn className="text-xl" />, title: "Linkedin In", link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231" },
+  { icon: <FaLinkedinIn className="text-xl" />, title: "Linked In", link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231" },
   { icon: <GitHub />, title: "Git Hub", link: "https://github.com/the-coder-kalisa" }
 ];
 export const lefts = [
