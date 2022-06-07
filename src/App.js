@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Primarycare from './pages/landing/Primarycare';
-import Notfound from './pages/landing/Notfound'
-import Getapp from './pages/landing/Getapp'
-import Healthcare from './pages/landing/Healthcare'
-import Ecosystem from './pages/landing/Ecosystem'
+import Notfound from './pages/landing/Notfound';
+import Getapp from './pages/landing/Getapp';
+import Healthcare from './pages/landing/Healthcare';
+import Ecosystem from './pages/landing/Ecosystem';
 function App() {
   const routes = [
     { element: <Primarycare />, path: "/landing/primarycare" },
