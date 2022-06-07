@@ -29,29 +29,8 @@ function Ecosystem() {
     "Delivering tomorrow's health care for your family",
   ];
   return (
-<<<<<<< Updated upstream
-    <div className="w-full bg-[#E6EDF8]">
-      {loading ? (
-        <Landing />
-      ) : (
-        <>
-          <Navigation link={"ecosystem"} title="Levitra - Ecosystem" />
-          <div className="pt-[8rem] bg-[#E6EDF8]">
-            {!width ? (
-              <div className="flex gap-4 pb-14 px-4 items-center justify-center">
-                <div className="flex flex-col gap-16 max-w-[27rem]">
-                  <div className="text-[#3A4A62] text-xl font-bold">
-                    We provide all aspects of medical practice for you whole
-                    family, including general check-ups or assisting you with
-                    specific injuries.
-                  </div>
-                  <div className="text-[#3A4A62] font-medium text-lg">
-                    We'll work with you to develop individualized care plans,
-                    including management of chronic diseases. If we cannot
-                    assist, we can provide referrals or advice about type of
-                    practitioner require. We treat all enquires sensitively and
-                    in the strictest confidence
 
+    <>
     <div className="w-[100%] h-[100vh] bg-[#E6EDF8]">
       {loading && <Landing />}
       <Navigation link={"ecosystem"} title="Levitra - Ecosystem" />
@@ -93,8 +72,8 @@ function Ecosystem() {
                   <div key={index} className="flex font-bold gap-2 items-center">
                     <Approval />
                     <div>{eco}</div>
->>>>>>> Stashed changes
                   </div>
+                ))}
                 </div>
                 <div className="flex flex-col gap-4 items-center max-w-[50rem]">
                   <h2 className="text-[#3A4A62] text-center font-bold text-xl">
@@ -130,7 +109,7 @@ function Ecosystem() {
                 <h2
                   className={`text-[#3A4A62] ${
                     !wid && "text-center"
-                  } font-bold text-xl`}
+                  } font-bold text-xl`}></h2>
 
             </div>
             <div className="items-center max-w-[50rem] ">
@@ -158,8 +137,10 @@ function Ecosystem() {
                 <div
                   className={`text-[#3A4A62] ${wid && ""} text-xl font-bold`}
 >
+                  <h2>
                   Caring for the health and well being of you and your family
                 </h2>
+                </div>
                 <div className="flex gap-4 px-4">
                   <div className="flex flex-col gap-7">
                     <h1 className={`font-bold text-3xl text-[#053085]`}>
@@ -190,7 +171,7 @@ function Ecosystem() {
                   <LeftDoctor />
                 </div>
               </div>
-            )}
+            
             <div className="flex w-full mb-10">
               <div
                 style={{ backgroundImage: `url(${MaleDoctor})` }}
@@ -220,8 +201,7 @@ function Ecosystem() {
                   ))}
                 </div>
               </div>
-<<<<<<< Updated upstream
-=======
+                    </div>
               
             </div>
           </div>
@@ -249,15 +229,10 @@ function Ecosystem() {
                   <div className="font-semibold">{down}</div>
                 </div>
               ))}
->>>>>>> Stashed changes
+
             </div>
             <div></div>
           </div>
-<<<<<<< Updated upstream
-          <Bottomer />
-        </>
-      )}
-=======
         </div>
         <div className="w-full p-[2rem] items-center">
         <div className="flex justify-around w-full h-[10%] ">
@@ -281,13 +256,15 @@ function Ecosystem() {
                   ))}
                 
         </div>
-                
+                </div>
         </div>
       </div>
       <Bottomer />
->>>>>>> Stashed changes
-    </div>
+  )     
+  </>
+    
+    
   );
 }
-
+      
 export default Ecosystem;
