@@ -9,7 +9,6 @@ import { Responsive } from '../../context/landing/Responsive'
 import { lefts, follows, works, testmony } from '../../datas/Landing'
 import Landing from '../../loading/Landing'
 import Fade from 'react-reveal/Fade'
-// import Fade from 'react-reveal/Fade'
 import { Zoom } from 'react-reveal'
 
 function Primarycare() {
