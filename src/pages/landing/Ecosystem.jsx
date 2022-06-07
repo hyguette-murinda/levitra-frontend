@@ -62,7 +62,7 @@ function Ecosystem() {
                 confidence
               </div>
             </div>
-            <div className="text-[#3A4A62] max-w-[20rem] flex flex-col gap-5 text-lg">
+            {/* <div className="text-[#3A4A62] max-w-[20rem] flex flex-col gap-5 text-lg">
               <div className="font-medium text-lg">
                 We're here to care for you and your entire family. Regular
                 visits to the doctor will depend on your age and general health!
@@ -103,13 +103,13 @@ function Ecosystem() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </div> */}
             ) : (
               <div className="flex flex-col items-center gap-8 pb-14">
-                <h2
+                {/* <h2
                   className={`text-[#3A4A62] ${
                     !wid && "text-center"
-                  } font-bold text-xl`}></h2>
+                  } font-bold text-xl`}></h2> */}
 
             </div>
             <div className="items-center max-w-[50rem] ">
