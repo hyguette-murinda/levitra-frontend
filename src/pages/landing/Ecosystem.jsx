@@ -29,9 +29,8 @@ function Ecosystem() {
     "Delivering tomorrow's health care for your family",
   ];
   return (
-
-    <>
-    <div className="w-[100%] h-[100vh] bg-[#E6EDF8]">
+    <div>
+    <div className="w-[100%] min-h-[100vh]  bg-[#E6EDF8]">
       {loading && <Landing />}
       <Navigation link={"ecosystem"} title="Levitra - Ecosystem" />
       <div className="pt-[8rem] bg-[#E6EDF8]">
@@ -45,9 +44,9 @@ function Ecosystem() {
                 We Strive To Provide You &amp; Your Family With The Best Medical
               </h1>
               </div>
-          <div className="flex gap-4 pb-14 px-8 items-center justify-center py-5">
+          <div className="flex gap-4 pb-10 px-8 items-center justify-center py-5">
             
-            <div className="flex flex-col gap-16 max-w-[20rem]">
+            <div className="flex flex-col gap-2 max-w-[20rem]">
 
               <div className="text-[#3A4A62] text-xl font-bold">
                 We provide all aspects of medical practice for you whole family,
@@ -62,7 +61,9 @@ function Ecosystem() {
                 confidence
               </div>
             </div>
-            {/* <div className="text-[#3A4A62] max-w-[20rem] flex flex-col gap-5 text-lg">
+
+              
+              <div className="text-[#3A4A62] max-w-[20rem] flex flex-col gap-5 text-lg">
               <div className="font-medium text-lg">
                 We're here to care for you and your entire family. Regular
                 visits to the doctor will depend on your age and general health!
@@ -75,44 +76,9 @@ function Ecosystem() {
                   </div>
                 ))}
                 </div>
-                <div className="flex flex-col gap-4 items-center max-w-[50rem]">
-                  <h2 className="text-[#3A4A62] text-center font-bold text-xl">
-                    Caring for the health and well being of you and your family
-                  </h2>
-                  <h1 className="font-bold text-4xl text-[#053085] text-center">
-                    We Strive To Provide You &amp; Your Family With The Best
-                    Medical
-                  </h1>
-                  <LeftDoctor />
-                </div>
-                <div className="text-[#3A4A62] max-w-[25rem] flex flex-col gap-5 text-lg">
-                  <div className="font-medium text-lg">
-                    We're here to care for you and your entire family. Regular
-                    visits to the doctor will depend on your age and general
-                    health!
-                  </div>
-                  <div className="flex flex-col gap-2 w-[18rem]">
-                    {ecos.map((eco, index) => (
-                      <div
-                        key={index}
-                        className="flex font-bold gap-2 items-center"
-                      >
-                        <Approval />
-                        <div>{eco}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div> */}
-            ) : (
-              <div className="flex flex-col items-center gap-8 pb-14">
-                {/* <h2
-                  className={`text-[#3A4A62] ${
-                    !wid && "text-center"
-                  } font-bold text-xl`}></h2> */}
+                    </div>
 
-            </div>
-            <div className="items-center max-w-[50rem] ">
+            <div className="max-w-[50rem] ">
 
               <LeftDoctor />
             </div>
@@ -156,19 +122,10 @@ function Ecosystem() {
                       family, including general check-ups or assisting you with
                       specific injuries.
                     </div>
-                    <div className="flex flex-col text-[#3A4A62] gap-2">
-                      {ecos.map((eco, index) => (
-                        <div
-                          key={index}
-                          className="flex font-bold text-lg gap-2 items-center"
-                        >
-                          <Approval />
-                          <div>{eco}</div>
-                        </div>
-                      ))}
                     </div>
-                  </div>
-                  <LeftDoctor />
+
+                  
+
                 </div>
               </div>
             
@@ -259,11 +216,12 @@ function Ecosystem() {
                 </div>
         </div>
       </div>
+      
+      
       <Bottomer />
-  )     
-  </>
+
     
-    
+    </div>
   );
 }
       
