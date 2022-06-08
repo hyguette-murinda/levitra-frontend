@@ -110,18 +110,18 @@ function Ecosystem() {
                 style={{ backgroundImage: `url(${MaleDoctor})` }}
                 className="min-w-[50%] bg-cover bg-top  "
               ></div>
-              <div className="bg-[#080B4A] flex flex-col items-center gap-24 text-white">
-                <div className="flex flex-col items-center gap-10">
+              <div className="bg-[#080B4A] flex flex-col gap-24 text-white">
+                <div className="flex flex-col gap-10">
                   <h1 className="font-bold text-4xl font-[sans Inter] text-center">
                     Sets The Standard For Outstanding High QualityCare And
                     Patient Safety!!
                   </h1>
-                    <p className="text-[#D6D5D5] max-w-[32rem]">
+                    <p className="text-[#D6D5D5] w-[10rem]">
                       Our doctors include highly qualified male and female
                       practitioners who come from a range of backgrounds and
                       bring with a diversity of skills and special interests.
                     </p>
-                    <p className="text-[#D6D5D5] max-w-[32rem]">
+                    <p className="text-[#D6D5D5] w-[10rem]">
                       Our administration and support staff all have exceptional
                       people skills and trained to assist you with all medical
                       enquires.
