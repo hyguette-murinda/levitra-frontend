@@ -1,81 +1,129 @@
-import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
-import { Instagram, GitHub } from '@mui/icons-material'
-import { NoteAdd } from '@mui/icons-material'
-import Test from '../icons/Test'
-import Micro from '../icons/Micro'
-import Store from '../icons/Store.jsx'
-import Doctors from '../assets/doctor.png'
-import Doctor from '../icons/doctor.jsx'
-import Smile from '../icons/Smile.jsx'
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { Instagram, GitHub } from "@mui/icons-material";
+import { NoteAdd } from "@mui/icons-material";
+import Test from "../icons/Test";
+import Micro from "../icons/Micro";
+import Store from "../icons/Store.jsx";
+import Doctors from "../assets/doctor.png";
+import Doctor from "../icons/doctor.jsx";
+import Smile from "../icons/Smile.jsx";
 
 export const navs = [
   { link: "Primary Care", path: "primarycare" },
   { link: "Ecosystem", path: "ecosystem" },
   { link: "Health Services", path: "heathcare" },
-  { link: "Get app", path: "getapp" }
+  { link: "Get app", path: "getapp" },
 ];
 export const bots = [
-  { h1: "Learn More", bols: ["Plans and pricing", "Tips and Tricks", "Plugins and apps", "Legal /Privacy"] },
+  {
+    h1: "Learn More",
+    bols: [
+      "Plans and pricing",
+      "Tips and Tricks",
+      "Plugins and apps",
+      "Legal /Privacy",
+    ],
+  },
   { h1: "Company", bols: ["About us", "Press", "Owner"] },
-  { h1: "Support", bols: ["0785964206", "Contact us", "FAQ"] }
+  { h1: "Support", bols: ["0785964206", "Contact us", "FAQ"] },
 ];
 export const contacts = [
-  { icon: <FaFacebookF className="text-xl" />, title: "Facebook", link: "https://www.facebook.com/nikalisa.45" },
-  { icon: <Instagram />, title: "Instagram", link: "https://www.instagram.com/ni_kalisa" },
-  { icon: <FaLinkedinIn className="text-xl" />, title: "Linked In", link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231" },
-  { icon: <GitHub />, title: "Git Hub", link: "https://github.com/the-coder-kalisa" }
+  {
+    icon: <FaFacebookF className="text-xl" />,
+    title: "Facebook",
+    link: "https://www.facebook.com/nikalisa.45",
+  },
+  {
+    icon: <Instagram />,
+    title: "Instagram",
+    link: "https://www.instagram.com/ni_kalisa",
+  },
+  {
+    icon: <FaLinkedinIn className="text-xl" />,
+    title: "Linked In",
+    link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231",
+  },
+  {
+    icon: <GitHub />,
+    title: "Git Hub",
+    link: "https://github.com/the-coder-kalisa",
+  },
 ];
 export const lefts = [
-  { icon: <Doctor color="#E3A7C6" width="20" />, h1: "Treatment", p: "We can treat most illness and provide referrals to a specialst for very complex conditions." },
-  { icon: <NoteAdd style={{ color: "#06BA63" }} sx={{ width: '2rem', height: '2rem' }} />, h1: "Prescriptons", p: "Levitra helps you get and refill prescriptions. But All doctors treat, but a good doctor lets nature heal." },
-  { icon: <Test />, h1: "Diagnose", p: "Levitra mails the results to your house. Levitra uses these data to diagose you  precisely." },
-  { icon: <Micro />, h1: "Referrals", p: "Levitra provides referrals to specialists, labs,imaging and other advancedtests." }
-]
+  {
+    icon: <Doctor color="#E3A7C6" width="20" />,
+    h1: "Treatment",
+    p: "We can treat most illness and provide referrals to a specialst for very complex conditions.",
+  },
+  {
+    icon: (
+      <NoteAdd
+        style={{ color: "#06BA63" }}
+        sx={{ width: "2rem", height: "2rem" }}
+      />
+    ),
+    h1: "Prescriptons",
+    p: "Levitra helps you get and refill prescriptions. But All doctors treat, but a good doctor lets nature heal.",
+  },
+  {
+    icon: <Test />,
+    h1: "Diagnose",
+    p: "Levitra mails the results to your house. Levitra uses these data to diagose you  precisely.",
+  },
+  {
+    icon: <Micro />,
+    h1: "Referrals",
+    p: "Levitra provides referrals to specialists, labs,imaging and other advancedtests.",
+  },
+];
 export const works = [
   {
     icon: <Store />,
     h1: "Stock Management",
-    document: "We take care of your medecines and their exchange"
+    document: "We take care of your medecines and their exchange",
   },
   {
     icon: <Doctor width="80" />,
     h1: "Patient-Doctor Chat",
-    document: "Patients can talk their doctors via messages or call"
+    document: "Patients can talk their doctors via messages or call",
   },
   {
     icon: <img src={Doctors} alt="doctors" className="w-[80px]" />,
     h1: "Patients' Health",
-    document: "We Provide The Best Medical Care For Your Family!"
-  }
-]
+    document: "We Provide The Best Medical Care For Your Family!",
+  },
+];
 export const follows = [
   {
     icon: <Doctor />,
-    h1: '1000+',
-    message: 'Good doctors'
+    h1: "1000+",
+    message: "Good doctors",
   },
   {
     icon: <Smile />,
     h1: "12K",
-    message: 'Happy patients'
-  }
+    message: "Happy patients",
+  },
 ];
 export const testmony = [
   {
-    message: "Great service-Helped with an immediate diagnosis which could well have saved my life.",
+    message:
+      "Great service-Helped with an immediate diagnosis which could well have saved my life.",
     sender: "KALISA INEZA Giovanni",
-    place: "Norvege, Kigali"
+    place: "Norvege, Kigali",
   },
   {
-    message: "You feel like being treated by your family Doctor who knows you for so many years",
+    message:
+      "You feel like being treated by your family Doctor who knows you for so many years",
     sender: "BUGINGO Eloi",
-    place: "Nyamirambo, Kigali"
+    place: "Nyamirambo, Kigali",
   },
   {
-    message: "I have never experienced such through, responsive proactive health care.",
+    message:
+      "I have never experienced such through, responsive proactive health care.",
     sender: "Rutangerwa Bruce",
-    place: "Remera, Kigali"
-  }
+    place: "Remera, Kigali",
+  },
 ];
 export const ecos = [
   "Health assessments",
@@ -87,4 +135,23 @@ export const downs = [
   "Delivering tomorrow's health care for your family",
   "Delivering tomorrow's health care for your family",
   "Delivering tomorrow's health care for your family",
+];
+export const qns = [
+  { quest: "Why Trust levitra", desc: "" },
+  {
+    quest: "Why choose Levitra",
+    desc: "Levitra lets you avoid the hassle, wait and cost of other telemedicine apps, walk in clinic, urgent cares or ERs.With  Levitra you can chat with a Doctor 365 days a year.",
+  },
+  {
+    quest: "When are Doctors Avalilable",
+    desc: "",
+  },
+  {
+    quest: "Is Insurance accepted",
+    desc: "",
+  },
+  {
+    quest: "Is it Security Trusted",
+    desc: "",
+  },
 ];

@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext } from 'react'
 import background from '../../assets/background.png'
 import Woman from '../../assets/womandoc.png'
 import Doctors from '../../assets/doctor.png'
-import MaleDoctor from '../../assets/male.png'
+import MaleDoctor from '../../assets/doceco.jpg'
 export const Responsive = createContext();
 function Hello({ children }) {
   const [width, setWidth] = useState(false);

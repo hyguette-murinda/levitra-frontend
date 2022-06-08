@@ -6,7 +6,7 @@ import { ChevronRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Responsive } from "../../context/landing/Responsive";
 import { bots, contacts } from "../../datas/Landing";
-import {Fade} from 'react-reveal'
+import { Fade } from "react-reveal";
 function Bottomer({ one }) {
   const { width } = useContext(Responsive);
   const [drops, setDrops] = useState([]);
