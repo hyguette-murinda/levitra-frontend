@@ -194,7 +194,7 @@ function Ecosystem() {
         <div className="w-full p-[2rem] items-center">
         <div className="flex justify-around w-full h-[10%] ">
                 <div>
-                  <h3 className="font-xl text-black font-bold" style={{fontSize:"1.5rem"}}>How can we <br /><span className="font-xl text-[#080B4A] font-bold" >help  you</span></h3>
+                  <h3 className="text-black font-bold" style={{fontSize:"1.5rem"}}>How can we <br /><span className="font-xl text-[#080B4A] font-bold" >help  you</span></h3>
                 </div>
                 <div>
                 <Button variant="outlined" style={{ borderRadius:"20px", textTransform:"lowercase" }} className="m-10">Type your question here..</Button>
