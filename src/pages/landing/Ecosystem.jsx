@@ -78,7 +78,7 @@ function Ecosystem() {
                 </div>
                     </div>
 
-            <div className="max-w-[50rem] ">
+            <div className="items-center max-w-[50rem] ">
 
               <LeftDoctor />
             </div>
