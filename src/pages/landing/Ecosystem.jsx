@@ -9,6 +9,7 @@ import { Responsive } from "../../context/landing/Responsive";
 import Landing from "../../loading/Landing";
 import { ecos, downs, qns } from "../../datas/Landing";
 import { Add, ArrowCircleRight, PlayArrow, Remove } from "@mui/icons-material";
+import { Fade, Zoom } from 'react-reveal'
 
 function Ecosystem() {
   const { loading, width, wid, widh } = useContext(Responsive);
@@ -20,6 +21,7 @@ function Ecosystem() {
         : [...selected, index]
     );
   };
+
   return (
     <div className="w-full bg-[#E6EDF8]">
       {loading ? (
@@ -31,46 +33,54 @@ function Ecosystem() {
             {!width ? (
               <div className="flex gap-4 pb-14 px-4 items-center justify-center">
                 <div className="flex flex-col gap-16 max-w-[27rem]">
-                  <div className="text-[#3A4A62] text-xl font-bold">
-                    We provide all aspects of medical practice for you whole
-                    family, including general check-ups or assisting you with
-                    specific injuries.
-                  </div>
-                  <div className="text-[#3A4A62] font-medium text-lg">
-                    We'll work with you to develop individualized care plans,
-                    including management of chronic diseases. If we cannot
-                    assist, we can provide referrals or advice about type of
-                    practitioner require. We treat all enquires sensitively and
-                    in the strictest confidence
-                  </div>
+                 <Fade left duration={ 1000 } >
+                    <div className="text-[#3A4A62] text-xl font-bold">
+                      We provide all aspects of medical practice for you whole
+                      family, including general check-ups or assisting you with
+                      specific injuries.
+                    </div>
+                    <div className="text-[#3A4A62] font-medium text-lg">
+                      We'll work with you to develop individualized care plans,
+                      including management of chronic diseases. If we cannot
+                      assist, we can provide referrals or advice about type of
+                      practitioner require. We treat all enquires sensitively and
+                      in the strictest confidence
+                    </div>
+                 </Fade>
                 </div>
                 <div className="flex flex-col gap-4 items-center max-w-[50rem]">
-                  <h2 className="text-[#3A4A62] text-center font-bold text-xl">
-                    Caring for the health and well being of you and your family
-                  </h2>
-                  <h1 className="font-bold text-4xl text-[#053085] text-center">
-                    We Strive To Provide You &amp; Your Family With The Best
-                    Medical
-                  </h1>
-                  <LeftDoctor />
+                  <Zoom>
+                    <h2 className="text-[#3A4A62] text-center font-bold text-xl">
+                      Caring for the health and well being of you and your family
+                    </h2>
+                    <h1 className="font-bold text-4xl text-[#053085] text-center">
+                      We Strive To Provide You &amp; Your Family With The Best
+                      Medical
+                    </h1>
+                  </Zoom>
+                  <Zoom delay={ 1000 }>
+                    <LeftDoctor />
+                  </Zoom>
                 </div>
                 <div className="text-[#3A4A62] max-w-[25rem] flex flex-col gap-5 text-lg">
-                  <div className="font-medium text-lg">
+                  <Fade right duration={ 1000 }>
+                    <div className="font-medium text-lg">
                     We're here to care for you and your entire family. Regular
                     visits to the doctor will depend on your age and general
                     health!
-                  </div>
-                  <div className="flex flex-col gap-2 w-[18rem]">
-                    {ecos.map((eco, index) => (
-                      <div
-                        key={index}
-                        className="flex font-bold gap-2 items-center"
-                      >
-                        <Approval />
-                        <div>{eco}</div>
-                      </div>
-                    ))}
-                  </div>
+                    </div>
+                    <div className="flex flex-col gap-2 w-[18rem]">
+                      {ecos.map((eco, index) => (
+                        <div
+                          key={index}
+                          className="flex font-bold gap-2 items-center"
+                        >
+                          <Approval />
+                          <div>{eco}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </Fade>
                 </div>
               </div>
             ) : (
@@ -121,7 +131,8 @@ function Ecosystem() {
                 ></div>
               )}
               {!widh && (
-                <div className="absolute top-[38%] bg-[#080B4A] p-8 rounded-full left-[46%] my-auto">
+                <Fade left duration={ 1000 } delay={ 1000 }>
+                  <div className="absolute top-[38%] bg-[#080B4A] p-8 rounded-full left-[46%] my-auto">
                   <div className="bg-white w-20 h-20 flex items-center justify-center rounded-full">
                     <PlayArrow
                       style={{ height: 45, width: 45 }}
@@ -129,9 +140,11 @@ function Ecosystem() {
                     />
                   </div>
                 </div>
+                </Fade>
               )}
-              <div className="bg-[#080B4A] px-5 py-10 flex flex-col items-center gap-10 text-white">
-                <h1 className="font-bold text-4xl font-[sans Inter] text-center">
+              <div className={`bg-[#080B4A] px-5 py-10 flex ${!width ?  'w-1/2' : "w-full"} flex-col items-center gap-10 text-white`}>
+                <Fade right duration={ 1000 }>
+                  <h1 className="font-bold text-4xl max-w-[50rem] font-[sans Inter] text-center">
                   Sets The Standard For Outstanding High QualityCare And Patient
                   Safety!!
                 </h1>
@@ -190,6 +203,7 @@ function Ecosystem() {
                     </div>
                   </div>
                 </div>
+                </Fade>
               </div>
             </div>
             <div className="w-full flex mb-16 flex-col items-center">
@@ -206,7 +220,8 @@ function Ecosystem() {
                   />
                 </div>
                 <div className="flex flex-col gap-6">
-                  {qns.map((qn, index) => (
+                  <Fade bottom duration={ 1500 } delay={ 1000 } >
+                    {qns.map((qn, index) => (
                     <div
                       key={index}
                       style={
@@ -235,6 +250,7 @@ function Ecosystem() {
                       </div>
                     </div>
                   ))}
+                  </Fade>
                 </div>
               </div>
             </div>

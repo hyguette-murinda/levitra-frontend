@@ -63,7 +63,7 @@ function Primarycare() {
               </Fade>
             </div>
           </div>
-          <div className="flex items-center justify-center flex-col">
+          <div className="flex items-center justify-center flex-col"> 
             <Fade right duration={1000}>
               <h1 className="font-bold text-5xl py-4 text-center">
                 What we care about
