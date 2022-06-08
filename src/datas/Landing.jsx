@@ -77,3 +77,14 @@ export const testmony = [
     place: "Remera, Kigali"
   }
 ];
+export const ecos = [
+  "Health assessments",
+  "Home medicine review",
+  "Fractures and dislocation",
+  "Desensitization injections",
+];
+export const downs = [
+  "Delivering tomorrow's health care for your family",
+  "Delivering tomorrow's health care for your family",
+  "Delivering tomorrow's health care for your family",
+];

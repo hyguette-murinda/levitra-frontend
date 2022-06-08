@@ -6,20 +6,12 @@ import Approval from "../../icons/Approval";
 import MaleDoctor from "../../assets/male.png";
 import { Responsive } from "../../context/landing/Responsive";
 import Landing from "../../loading/Landing";
+import { ecos, downs } from "../../datas/Landing";
+import { Button } from "@mui/material";
+import { ArrowCircleRight } from "@mui/icons-material";
 
 function Ecosystem() {
   const { loading, width, wid } = useContext(Responsive);
-  const ecos = [
-    "Health assessments",
-    "Home medicine review",
-    "Fractures and dislocation",
-    "Desensitization injections",
-  ];
-  const downs = [
-    "Delivering tomorrow's health care for your family",
-    "Delivering tomorrow's health care for your family",
-    "Delivering tomorrow's health care for your family",
-  ];
   return (
     <div className="w-full bg-[#E6EDF8]">
       {loading ? (
@@ -113,33 +105,68 @@ function Ecosystem() {
                 </div>
               </div>
             )}
-            <div className="flex w-full mb-10">
+            <div className="flex w-full h-[50rem] mb-10">
               <div
                 style={{ backgroundImage: `url(${MaleDoctor})` }}
-                className="min-w-[50%]"
+                className="min-w-[50%] bg-cover bg-top  "
               ></div>
-              <div className="bg-[#080B4A] flex gap-7 flex-col px-14 py-10 text-white">
-                <h1 className="font-bold text-4xl font-[sans Inter] text-center">
-                  Sets The Standard For Outstanding High QualityCare And Patient
-                  Safety!!
-                </h1>
-                <p className="text-[#D6D5D5]">
-                  Our doctors include highly qualified male and female
-                  practitioners who come from a range of backgrounds and bring
-                  with a diversity of skills and special interests.
-                </p>
-                <p className="text-[#D6D5D5] pt-5">
-                  Our administration and support staff all have exceptional
-                  people skills and trained to assist you with all medical
-                  enquires.
-                </p>
-                <div className="max-w-1/2 flex flex-col gap-4">
-                  {downs.map((down, index) => (
-                    <div key={index} className="flex gap-3 items-center">
-                      <Approval />
-                      <div className="font-semibold">{down}</div>
-                    </div>
-                  ))}
+              <div className="bg-[#080B4A] flex flex-col items-center gap-24 text-white">
+                <div className="flex flex-col items-center gap-10">
+                  <h1 className="font-bold text-4xl font-[sans Inter] text-center">
+                    Sets The Standard For Outstanding High QualityCare And
+                    Patient Safety!!
+                  </h1>
+                    <p className="text-[#D6D5D5] max-w-[32rem]">
+                      Our doctors include highly qualified male and female
+                      practitioners who come from a range of backgrounds and
+                      bring with a diversity of skills and special interests.
+                    </p>
+                    <p className="text-[#D6D5D5] max-w-[32rem]">
+                      Our administration and support staff all have exceptional
+                      people skills and trained to assist you with all medical
+                      enquires.
+                    </p>
+                </div>
+                <div>
+                  <div className="max-w-1/2 flex flex-col gap-4">
+                    {downs.map((down, index) => (
+                      <div key={index} className="flex gap-3 items-center">
+                        <Approval />
+                        <div className="font-semibold">{down}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex gap-10">
+                    <Button
+                      style={{
+                        color: "white",
+                        border: "1px solid white",
+                        background: "#0F1359",
+                        width: 230,
+                        height: 50,
+                        display: "flex",
+                        justifyContent: "space-around",
+                        borderRadius: "30px",
+                      }}
+                      variant="outlined"
+                    >
+                      <ArrowCircleRight />
+                      <span>Make Appointment</span>
+                    </Button>
+                    <Button
+                      style={{
+                        color: "white",
+                        border: "1px solid white",
+                        display: "flex",
+                        justifyContent: "space-around",
+                        borderRadius: "30px",
+                        width: 200,
+                      }}
+                      variant="outlined"
+                    >
+                      Find a doctor
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
