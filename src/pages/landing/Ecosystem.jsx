@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Navigation from "../../components/landing/Navigation";
 import Bottomer from "../../components/landing/Bottomer";
 import LeftDoctor from "../../icons/LeftDoctor";
@@ -8,10 +8,18 @@ import { Button } from "@mui/material";
 import { Responsive } from "../../context/landing/Responsive";
 import Landing from "../../loading/Landing";
 import { ecos, downs, qns } from "../../datas/Landing";
-import { Add, ArrowCircleRight, PlayArrow } from "@mui/icons-material";
+import { Add, ArrowCircleRight, PlayArrow, Remove } from "@mui/icons-material";
 
 function Ecosystem() {
-  const { loading, width, wid } = useContext(Responsive);
+  const { loading, width, wid, widh } = useContext(Responsive);
+  const [selected, setSelected] = useState([]);
+  const changes = (index) => {
+    setSelected(
+      selected.includes(index)
+        ? selected.filter((selected) => selected !== index)
+        : [...selected, index]
+    );
+  };
   return (
     <div className="w-full bg-[#E6EDF8]">
       {loading ? (
@@ -105,20 +113,24 @@ function Ecosystem() {
                 </div>
               </div>
             )}
-            <div className="flex w-full relative h-[50rem] mb-10">
-              <div
-                style={{ backgroundImage: `url(${MaleDoctor})` }}
-                className="min-w-[50%] bg-cover bg-top  "
-              ></div>
-              <div className="mx-auto absolute top-[38%] bg-[#080B4A] p-8 rounded-full left-[46%] my-auto">
-                <div className="bg-white w-20 h-20 flex items-center justify-center rounded-full">
-                  <PlayArrow
-                    style={{ height: 45, width: 45 }}
-                    className="text-black"
-                  />
+            <div className="flex w-full relative mb-10">
+              {!width && (
+                <div
+                  style={{ backgroundImage: `url(${MaleDoctor})` }}
+                  className="min-w-[50%] bg-cover bg-top  "
+                ></div>
+              )}
+              {!widh && (
+                <div className="absolute top-[38%] bg-[#080B4A] p-8 rounded-full left-[46%] my-auto">
+                  <div className="bg-white w-20 h-20 flex items-center justify-center rounded-full">
+                    <PlayArrow
+                      style={{ height: 45, width: 45 }}
+                      className="text-black"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="bg-[#080B4A] py-10 flex flex-col items-center gap-10 text-white">
+              )}
+              <div className="bg-[#080B4A] px-5 py-10 flex flex-col items-center gap-10 text-white">
                 <h1 className="font-bold text-4xl font-[sans Inter] text-center">
                   Sets The Standard For Outstanding High QualityCare And Patient
                   Safety!!
@@ -180,31 +192,47 @@ function Ecosystem() {
                 </div>
               </div>
             </div>
-            <div className="w-full flex flex-col items-center">
-              <div className="w-[60rem] flex flex-col gap-10">
-                <div className="flex max-w-full justify-between">
-                  <div className="flex flex-col font-bold text-2xl">
+            <div className="w-full flex mb-16 flex-col items-center">
+              <div className="w-[60%] flex flex-col gap-10">
+                <div className="flex max-w-full items-center justify-between">
+                  <div className="flex flex-col font-bold text-5xl">
                     <span>How can we</span>
                     <span className="text-[#053085]">help you?</span>
                   </div>
                   <input
                     type="text"
-                    className="border-[1px] border-solid rounded-full w-[16rem] px-5 h-10 border-[#071854]"
+                    className="border-[1px] outline-none border-solid rounded-full w-[22rem] py-6 placeholder:text-[#2B4883] px-7 h-10 bg-transparent border-[#071854]"
                     placeholder="Type your question here..."
                   />
-                </div> 
-                <div>
+                </div>
+                <div className="flex flex-col gap-6">
                   {qns.map((qn, index) => (
                     <div
                       key={index}
-                      className="w-full bg-white px-8 py-5 rounded-md text-[#2B4883]"
-                      style={{ boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)" }}
+                      style={
+                        selected.includes(index)
+                          ? {
+                              height: qn.desc.length,
+                              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
+                            }
+                          : {
+                              height: 70,
+                              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
+                            }
+                      }
+                      className={`w-full bg-white transition-all duration-700 overflow-hidden px-8 py-5 rounded-md text-[#2B4883]`}
                     >
                       <div className="flex justify-between items-center">
-                        <div className="font-semibold">{qn.quest}</div>
-                        <Add />
+                        <div className="font-semibold py-1">{qn.quest}</div>
+                        {selected.includes(index) ? (
+                          <Remove onClick={() => changes(index)} />
+                        ) : (
+                          <Add onClick={() => changes(index)} />
+                        )}
                       </div>
-                      <div></div>
+                      <div className="mt-4 max-w-[31rem] leading-7 text-lg">
+                        {qn.desc}
+                      </div>
                     </div>
                   ))}
                 </div>
